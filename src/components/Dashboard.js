@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchData } from "../actions/weatherStation";
-
-
+import { fetchData } from "../actions/weatherStation"
 @connect((store) => {
   return {
     status: store.weatherStation.status
@@ -14,7 +12,10 @@ export default class Dashboard extends Component {
     const city = this.__cityInput.value;
     city.length !== 0 ? this.props.dispatch(fetchData(city)) : null;
   }
-
+  _updateCity = () => {
+    const city = this.__cityInput.value;
+    city.length !== 0 ? this.props.dispatch(fetchData(city)) : null;
+  }
   _onkeyPress = e => {
     e.key === "Enter" ? this._updateCity() : null
   }
@@ -61,7 +62,7 @@ export default class Dashboard extends Component {
               onKeyPress={this._onkeyPress}
               placeholder={city}
             />
-            <input
+             <input
               type="button"
               value="&gt;"
               className="search"
@@ -69,11 +70,13 @@ export default class Dashboard extends Component {
               id="change-city-btn"
             />
             <input
+                  style={{position:"relative",textAlign:"center"}}
               type="button"
-              value="Get current location"
+              value="CurrentWeather"
               className="button"
               onClick={this.requestPosition.bind(this)}
             />
+        
           </div>
         </section>
         <span className="error">Please enter valid city name!</span>

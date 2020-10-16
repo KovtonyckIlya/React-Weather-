@@ -26,6 +26,7 @@ export default class ForecastTiles extends Component {
       pressure.push(item.main.pressure);
       humidity.push(item.main.humidity);
       wind.push(item.wind.speed);
+   
     });
 
     const minMax = {
@@ -37,6 +38,8 @@ export default class ForecastTiles extends Component {
     const avgPressure = Math.round(pressure.reduce((curr, next) => curr + next) / pressure.length);
     const avgWind = Math.round(wind.reduce((curr, next) => curr + next) / wind.length);
 
+    
+
     return (
       <div className="weather-info">
         <div className="min-max">
@@ -46,6 +49,8 @@ export default class ForecastTiles extends Component {
         <p>{`Avg. Pressure: ${avgPressure}%`}</p>
         <p>{`Avg. Humidity: ${avgHumdity}%`}</p>
         <p>{`WindSpeed: ${avgWind}%`}</p>
+        
+        
         </div>  
       </div>
     );
