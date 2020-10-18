@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchData } from "../actions/weatherStation"
+import { fetchData } from "../actions/weatherStation";
+
+
+
 @connect((store) => {
   return {
     status: store.weatherStation.status
@@ -70,7 +73,6 @@ export default class Dashboard extends Component {
               id="change-city-btn"
             />
             <input
-                  style={{position:"relative",textAlign:"center"}}
               type="button"
               value="CurrentWeather"
               className="button"

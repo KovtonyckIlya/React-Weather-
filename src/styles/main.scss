@@ -128,10 +128,11 @@ body {
         }
 
         &.search {
-          width: 45px;
-          height: 100%;
+          background-image: url(https://static.thenounproject.com/png/379940-200.png);
+          background-repeat: no-repeat;
+          width: 25px;
+          height: 25px;
           cursor: pointer;
-          text-align: center;
         }
         &.button {
           background-color:#283593;
